@@ -10,8 +10,6 @@ app.get("/health", (req, res) => {
   res.json({ status: "ok" });
 });
 
-app.use("/", routes);
-
 app.get("/", (req, res) => {
   res.json({
     message: "URL Shortener Backend API is running",
@@ -20,5 +18,7 @@ app.get("/", (req, res) => {
     stats: "/:code/stats"
   });
 });
+
+app.use("/", routes);
 
 module.exports = app;
